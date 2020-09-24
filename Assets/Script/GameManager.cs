@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public List<Phase> phases;
     public Network network;
     public int stat { get; private set; }
-    private Dictionary<int, string> targetIPs;
 
     public Wave CurrentWave() {return phases[currentPhase].waves[phases[currentPhase].currentWave]; }
 
@@ -71,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Starting a new game");
+        //Debug.Log("Starting a new game");
         currentPhase = 0;
         score = 0;
         //Select targets
@@ -103,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     public bool StartNewPhase()
     {
-        Debug.Log("Starting new phase");
+        //Debug.Log("Starting new phase");
         //Last phase reached
         if (currentPhase == phases.Count - 1)
         {
@@ -122,12 +121,12 @@ public class GameManager : MonoBehaviour
 
     public bool StartNewWave()
     {
-        Debug.Log("Starting new wave");
+        //Debug.Log("Starting new wave");
         Phase tmpPhase = phases[currentPhase];
 
         //Final wave reached
         if (tmpPhase.currentWave == tmpPhase.waves.Count - 1) {
-            Debug.Log("Final wave reached");
+            //Debug.Log("Final wave reached");
             StartNewPhase();
             return true;
         }
@@ -164,7 +163,7 @@ public class GameManager : MonoBehaviour
     {
         //TODO: Send start wave audio event
         yield return new WaitForSeconds(CurrentWave().duration);
-        Debug.Log("Wave started");
+        //Debug.Log("Wave started");
         CurrentWave().phaseState = ePHASE_STATE.Playing;
         //Send activation network messages for targets
         yield return null;
@@ -182,13 +181,13 @@ public class GameManager : MonoBehaviour
 
             //Shot a hostage
             if(shotTarget.targetType == eTARGET_TYPE.Hostage) {
-                Debug.Log("Shot a hostage" + target);
+                //Debug.Log("Shot a hostage" + target);
                 score = Mathf.Clamp(score - 1, 0, 100);
                 CurrentWave().hostagesDown++;
             }
             //Shot a hostile
             else {
-                Debug.Log("Shot a hostile" + target);
+                //Debug.Log("Shot a hostile" + target);
                 ++score;
                 CurrentWave().hostilesDown++;
             }
@@ -212,7 +211,7 @@ public class GameManager : MonoBehaviour
 
     private void ReceiveMessage(string message)
     {
-        Debug.Log(message);
+        //Debug.Log(message);
         if (message.Contains("target") && CurrentWave().phaseState == ePHASE_STATE.Playing)
         {
             switch(message)

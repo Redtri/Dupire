@@ -31,6 +31,8 @@ public class Network : MonoBehaviour {
     private FMOD.Studio.EventInstance instanceTargetB;
     private FMOD.Studio.EventInstance instanceTargetC;
 
+    public int score;
+
     public StrEvent onMessageReceive;
 
 	string datA, datB, datC;
@@ -42,10 +44,16 @@ public class Network : MonoBehaviour {
 		t = new Thread( new ThreadStart(ListenThread) );
 		t.IsBackground = true;
 		t.Start();
+        StartGame();
+    }
+
+    void StartGame()
+    {
+        StartCoroutine(NewStateCoroutine());
         gameState = 1;
         nbShoot = 0;
         StartingAudio();
-	}
+    }
 
     void StartingAudio()
     {
@@ -79,6 +87,8 @@ public class Network : MonoBehaviour {
             //Debug.Log("Listener: Received a broadcast from " + groupEP.ToString());
 
             onMessageReceive?.Invoke(dat);
+
+            Debug.Log(dat + " shot signal");
 
             if (dat == "target_A")
             {
@@ -126,170 +136,176 @@ public class Network : MonoBehaviour {
 
     void TargetAShot()
     {
-        switch (gameState)
-        {
-            // State 1
+        if(!waiting) {
+            Debug.Log("Target C validated shot");
+            switch (gameState) {
+                // State 1
 
-            case 1:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 1.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                instanceTargetA.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                nbShoot++;
-                stateChange();
-                break;
+                case 1:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 1.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    instanceTargetA.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 2
+                // State 2
 
-            case 4:
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                nbShoot++;
-                stateChange();
-                break;
+                case 4:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            case 6:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                nbShoot++;
-                stateChange();
-                break;
+                case 6:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 3
+                // State 3
 
-            case 7:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
-                break;
+                case 7:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    break;
 
-            case 8:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
-                break;
+                case 8:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    break;
 
-            case 9:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                
-                nbShoot++;
-                stateChange();
-                break;
+                case 9:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
 
-            // State 4
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            case 10:
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                nbShoot++;
-                stateChange();
-                break;
+                // State 4
 
+                case 10:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    nbShoot++;
+                    stateChange();
+                    break;
+
+            }
         }
     }
 
     void TargetBShot()
     {
-        switch (gameState)
-        {
-            // State 1
+        if (!waiting) {
+            Debug.Log("Target C validated shot");
+            switch (gameState) {
+                // State 1
 
-            case 2:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
-                nbShoot++;
-                stateChange();
-                break;
+                case 2:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 2
+                // State 2
 
-            case 4:
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
-                nbShoot++;
-                stateChange();
-                break;
+                case 4:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            case 5:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
-                nbShoot++;
-                stateChange();
-                break;
+                case 5:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 3
+                // State 3
 
-            case 8:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
-                nbShoot++;
-                stateChange();
-                break;
+                case 8:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            case 9:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
-                break;
+                case 9:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    break;
 
-            // State 4
+                // State 4
 
-            case 10:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
-                nbShoot++;
-                stateChange();
-                break;
+                case 10:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
+            }
         }
     }
 
     void TargetCShot()
     {
-        switch (gameState)
-        {
-            // State 1
+        if(!waiting) {
+            Debug.Log("Target C validated shot");
+            switch (gameState) {
+                // State 1
 
-            case 3:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
-                nbShoot++;
-                stateChange();
-                break;
+                case 3:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 2
+                // State 2
 
-            case 5:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
-                nbShoot++;
-                stateChange();
-                break;
+                case 5:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            case 6:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
-                nbShoot++;
-                stateChange();
-                break;
+                case 6:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 3
+                // State 3
 
-            case 7:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
-                nbShoot++;
-                stateChange();
-                break;
+                case 7:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            case 8:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
-                break;
+                case 8:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    break;
 
-            case 9:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
-                nbShoot++;
-                stateChange();
-                break;
+                case 9:
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
-            // State 4
+                // State 4
 
-            case 10:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
-                nbShoot++;
-                stateChange();
-                break;
+                case 10:
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    nbShoot++;
+                    stateChange();
+                    break;
 
+            }
         }
     }
 
@@ -308,6 +324,8 @@ public class Network : MonoBehaviour {
                 break;
         }
     }
+
+    private bool waiting = false;
 
     void stateChange()
     {
@@ -329,6 +347,7 @@ public class Network : MonoBehaviour {
                     Debug.Log("State 2 begins");
                     state1 = false;
                 }
+                UnityMainThread.wkr.Enqueue(NewStateCoroutine());
                 gameState++;
                 break;
 
@@ -348,6 +367,7 @@ public class Network : MonoBehaviour {
                     Debug.Log("State 3 begins");
                     state2 = false;
                 }
+                UnityMainThread.wkr.Enqueue(NewStateCoroutine());
                 gameState++;
                 break;
 
@@ -367,6 +387,7 @@ public class Network : MonoBehaviour {
                     Debug.Log("State 4 begins");
                     state3 = false;
                 }
+                UnityMainThread.wkr.Enqueue(NewStateCoroutine());
                 gameState++;
                 break;
 
@@ -376,8 +397,19 @@ public class Network : MonoBehaviour {
                 state2 = true;
                 state3 = true;
                 gameState = 1;
+                StartGame();
                 break;
         }
-        Debug.Log("State is Changing :" + gameState);
+        Debug.Log("State has Changed to :" + gameState);
+    }
+
+    private IEnumerator NewStateCoroutine()
+    {
+        Debug.Log("New state awaiting delay");
+        waiting = true;
+        yield return new WaitForSeconds(10f);
+        Debug.Log("New state starting");
+        waiting = false;
+        yield return null;
     }
 }

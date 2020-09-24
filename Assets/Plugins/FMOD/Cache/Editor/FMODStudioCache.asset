@@ -132,6 +132,29 @@ MonoBehaviour:
   Max: 5
   Default: 1
   Exists: 0
+--- !u!114 &-8387053024129503095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music_Play
+  m_EditorClassIdentifier: 
+  Path: event:/Music_Play
+  guid: 25e70dc23c2dcc4994b9e3178ac7e7e6
+  Banks:
+  - {fileID: -6513471430551034050}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 79058
 --- !u!114 &-8177009635399004013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +249,24 @@ MonoBehaviour:
   Max: 5
   Default: 1
   Exists: 0
+--- !u!114 &-7822664121417892812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Voices.bank
+  m_EditorClassIdentifier: 
+  Path: ../Dupire_Workshop/dupire/Build/Desktop/Voices.bank
+  SubDir: 
+  lastModified: 637365644754256144
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7766495403330885131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +343,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7549167332539559991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GameLevels
+  m_EditorClassIdentifier: 
+  Name: GameLevels
+  Min: 1
+  Max: 5
+  Default: 1
+  Exists: 1
 --- !u!114 &-7520132313959241728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +431,29 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7402240756549176037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_Hit_B
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_Hit_B
+  guid: 17d42a1f7732dc47bbcad56c87b3f4dc
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -452,6 +533,29 @@ MonoBehaviour:
   Max: 3
   Default: 1
   Exists: 0
+--- !u!114 &-7267814180858515611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_Ostages
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_Ostages
+  guid: 22ae6671f5f32440af109ea76b250133
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7247748847470251997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,6 +775,24 @@ MonoBehaviour:
   Max: 5
   Default: 1
   Exists: 0
+--- !u!114 &-6513471430551034050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Dupire_Workshop/dupire/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637365644753866151
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6439106404089352423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +1097,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5329573869979891785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/fart_003
+  m_EditorClassIdentifier: 
+  Path: event:/fart_003
+  guid: 58dd98e542d1134bb8f77ea0f8ec0104
+  Banks:
+  - {fileID: -6513471430551034050}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1175
 --- !u!114 &-5057685002720643469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,6 +1138,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5026109465966230361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_Start
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_Start
+  guid: c60c58fd5b9a9140abac21bc3828e9f9
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-5010942108618013200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,6 +1254,29 @@ MonoBehaviour:
   Max: 5
   Default: 1
   Exists: 0
+--- !u!114 &-4734615539021391651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_AMB
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_AMB
+  guid: d105d7088a0e9b4db9871a3c08aec34b
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4639935451329332572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,6 +1513,23 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 734
+  Exists: 1
+--- !u!114 &-3917673011837946198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GameState
+  m_EditorClassIdentifier: 
+  Name: GameState
+  Min: 0
+  Max: 4
+  Default: 1
   Exists: 1
 --- !u!114 &-3778003959238044301
 MonoBehaviour:
@@ -1665,6 +1873,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-2655347267189013477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Dupire_Workshop/dupire/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637365644753875845
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1574
+  Exists: 1
 --- !u!114 &-2620073534853790478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,6 +1927,29 @@ MonoBehaviour:
   Max: 3
   Default: 1
   Exists: 0
+--- !u!114 &-2524292559033703230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Strange_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Strange_Sound
+  guid: 14b8f0840f1e1b41b0cb115e6a0f9885
+  Banks:
+  - {fileID: 1730046324458376934}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-2481806406428522634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +2235,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1205163917630275363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_Hit_C
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_Hit_C
+  guid: 95e66734ef59774892e56a1979de96ff
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1192862302428625565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,35 +2661,34 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5882330116016417075}
-  - {fileID: -2669197867767282812}
-  - {fileID: 8107705775980875000}
-  - {fileID: -8149252038079560633}
+  - {fileID: -2655347267189013477}
+  - {fileID: 1730046324458376934}
+  - {fileID: -6513471430551034050}
+  - {fileID: -7822664121417892812}
   EditorEvents:
-  - {fileID: 4800507576350090518}
-  - {fileID: -3287949455595775526}
-  - {fileID: -7575692425258414559}
-  - {fileID: -9062791290780480529}
-  - {fileID: -7303470066031472850}
-  - {fileID: -7425455296896350986}
-  - {fileID: 2277181928825168482}
-  - {fileID: 3189356122682419400}
-  - {fileID: 3935307119415545638}
-  - {fileID: 2745852179018786425}
-  - {fileID: -6691785024045512254}
-  - {fileID: 6349638203089979391}
-  - {fileID: 2579688428287332695}
-  - {fileID: -8163130045282350276}
-  - {fileID: -5533001406662566319}
+  - {fileID: -2524292559033703230}
+  - {fileID: 8839515404042307541}
+  - {fileID: 5922676346484264653}
+  - {fileID: 1490349948981006442}
+  - {fileID: 4944227949368849380}
+  - {fileID: -8387053024129503095}
+  - {fileID: -5329573869979891785}
+  - {fileID: -7402240756549176037}
+  - {fileID: -7267814180858515611}
+  - {fileID: 4910027408561866736}
+  - {fileID: 530449165923011456}
+  - {fileID: -1205163917630275363}
+  - {fileID: -5026109465966230361}
+  - {fileID: -4734615539021391651}
   EditorParameters:
-  - {fileID: 2216430881067512199}
-  - {fileID: -9037239012458933271}
-  - {fileID: 8753480988683855946}
+  - {fileID: -3917673011837946198}
+  - {fileID: 6790248500978300994}
+  - {fileID: -7549167332539559991}
   MasterBanks:
-  - {fileID: 8107705775980875000}
+  - {fileID: -6513471430551034050}
   StringsBanks:
-  - {fileID: -5882330116016417075}
-  stringsBankWriteTime: 637365596901104803
+  - {fileID: -2655347267189013477}
+  stringsBankWriteTime: 637365644753875845
   cacheVersion: 3
 --- !u!114 &161628409906702228
 MonoBehaviour:
@@ -2494,6 +2767,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &530449165923011456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_Hit_A
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_Hit_A
+  guid: 6892db81fa19e54ebaea1878a65bec90
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &694175946166583329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,6 +3063,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &1490349948981006442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Flipper_Game
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Flipper_Game
+  guid: 5b40ffb3a76de241bddf23f76a06d631
+  Banks:
+  - {fileID: 1730046324458376934}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &1491774640252262107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2802,6 +3121,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1730046324458376934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMB.bank
+  m_EditorClassIdentifier: 
+  Path: ../Dupire_Workshop/dupire/Build/Desktop/AMB.bank
+  SubDir: 
+  lastModified: 637365644753495056
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1762739257591553059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3783,6 +4120,52 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4910027408561866736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VOICES/Voices_Miss_KillPeople
+  m_EditorClassIdentifier: 
+  Path: event:/VOICES/Voices_Miss_KillPeople
+  guid: 2b4e59fc2ff80d4eb049e986bcedb4cd
+  Banks:
+  - {fileID: -7822664121417892812}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4944227949368849380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Parc_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Parc_Sound
+  guid: 66d2667668902540af708ff7f7c9fd45
+  Banks:
+  - {fileID: 1730046324458376934}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 300627
 --- !u!114 &4963252018335461615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4088,6 +4471,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &5922676346484264653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Toys 3D
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Toys 3D
+  guid: 57e84383c45a1a47a40122ac319d9c0c
+  Banks:
+  - {fileID: 1730046324458376934}
+  - {fileID: -6513471430551034050}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &5981570227336250991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4368,6 +4775,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6790248500978300994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Target Pan
+  m_EditorClassIdentifier: 
+  Name: Target Pan
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &6829535690906918030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4799,6 +5223,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &8839515404042307541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/AMB_Details
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/AMB_Details
+  guid: 4dd9b33eaf8fcc45aa067f3f96393761
+  Banks:
+  - {fileID: 1730046324458376934}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 131782
 --- !u!114 &8843638662638495121
 MonoBehaviour:
   m_ObjectHideFlags: 0
