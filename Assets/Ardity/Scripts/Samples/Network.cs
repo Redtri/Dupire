@@ -50,7 +50,8 @@ public class Network : MonoBehaviour {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
         instanceTargetA = FMODUnity.RuntimeManager.CreateInstance("event:/Voices/Voices_Ostages");
         instanceTargetA.start();
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Music_Play");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Music_Play");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/AMB/AMB_Details");
     }
 
 	void ListenThread() {
@@ -106,60 +107,17 @@ public class Network : MonoBehaviour {
     void Update()
     {
         speakerOn();
+        stateChange();
         if (msgFromThread)
         {
             gameObject.SendMessage(msgName, msgPayload);
             msgFromThread = false;
         }
 
-        if(gameState == 3 && state1)
-        {
-            timeWaiting += Time.deltaTime;
-
-            if(timeWaiting > timeToWait)
-            {
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
-                Debug.Log("Starting State 2");
-                state1 = false;
-                timeWaiting = 0;
-            }
-        }
-
-        if (gameState == 6 && state2)
-        {
-            timeWaiting += Time.deltaTime;
-
-            if (timeWaiting > timeToWait)
-            {
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
-                Debug.Log("Starting State 3");
-                state2 = false;
-                timeWaiting = 0;
-            }
-        }
-
-        if (gameState == 9 && state3)
-        {
-            timeWaiting += Time.deltaTime;
-
-            if (timeWaiting > timeToWait)
-            {
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
-                Debug.Log("Starting State 4");
-                state3 = false;
-                timeWaiting = 0;
-            }
-        }
 
         if(gameState > 10)
         {
             gameState = 1;
-            state1 = true;
-            state2 = true;
-            state3 = true;
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 1.0f);
         }
 
@@ -187,7 +145,7 @@ public class Network : MonoBehaviour {
             // State 2
 
             case 4:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                 nbShoot++;
                 break;
@@ -339,6 +297,46 @@ public class Network : MonoBehaviour {
                 break;
             case 3:
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Target Pan", 2.0f);
+                break;
+        }
+    }
+
+    void stateChange()
+    {
+        switch (nbShoot)
+        {
+            case 3:
+                if (state1)
+                {
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
+                    Debug.Log("State 2 begins");
+                    state1 = false;
+                }
+                break;
+            case 9:
+                if (state2)
+                {
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
+                    Debug.Log("State 3 begins");
+                    state2 = false;
+                }
+                break;
+            case 13:
+                if (state3)
+                {
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
+                    Debug.Log("State 4 begins");
+                    state3 = false;
+                }
+                break;
+            case 16:
+                nbShoot = 0;
+                state1 = true;
+                state2 = true;
+                state3 = true;
                 break;
         }
     }

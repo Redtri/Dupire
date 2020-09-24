@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/fart_003
   guid: 58dd98e542d1134bb8f77ea0f8ec0104
   Banks:
-  - {fileID: 7864404047786873305}
+  - {fileID: 8107705775980875000}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -23,6 +23,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1175
+--- !u!114 &-9037239012458933271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Target Pan
+  m_EditorClassIdentifier: 
+  Name: Target Pan
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-9010519448660929093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +150,48 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8163130045282350276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Toys 3D
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Toys 3D
+  guid: 57e84383c45a1a47a40122ac319d9c0c
+  Banks:
+  - {fileID: -2669197867767282812}
+  - {fileID: 8107705775980875000}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-8149252038079560633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Voices.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/Voices.bank
+  SubDir: 
+  lastModified: 637365596901802939
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8096421199751093267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +276,7 @@ MonoBehaviour:
   Path: event:/Music_Play
   guid: 25e70dc23c2dcc4994b9e3178ac7e7e6
   Banks:
-  - {fileID: 7864404047786873305}
+  - {fileID: 8107705775980875000}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -310,7 +369,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_Ostages
   guid: 22ae6671f5f32440af109ea76b250133
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -368,7 +427,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_Hit_B
   guid: 17d42a1f7732dc47bbcad56c87b3f4dc
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -587,7 +646,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_AMB
   guid: d105d7088a0e9b4db9871a3c08aec34b
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -800,11 +859,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637365559767297798
+  lastModified: 637365596901104803
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1528
+    Value: 1574
   Exists: 1
 --- !u!114 &-5838287289620999300
 MonoBehaviour:
@@ -875,6 +934,29 @@ MonoBehaviour:
   Max: 3
   Default: 1
   Exists: 1
+--- !u!114 &-5533001406662566319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Flipper_Game
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Flipper_Game
+  guid: 5b40ffb3a76de241bddf23f76a06d631
+  Banks:
+  - {fileID: -2669197867767282812}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-5402295169467745222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,14 +1444,14 @@ MonoBehaviour:
   Path: event:/AMB/Parc_Sound
   guid: 66d2667668902540af708ff7f7c9fd45
   Banks:
-  - {fileID: -1613241346111119598}
-  IsStream: 0
+  - {fileID: -2669197867767282812}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 300627
 --- !u!114 &-3263390369454530511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1565,6 +1647,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2669197867767282812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMB.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/AMB.bank
+  SubDir: 
+  lastModified: 637365596900691811
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2620073534853790478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,7 +1947,7 @@ MonoBehaviour:
   lastModified: 637365559767058432
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1587389062103387213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,7 +2088,7 @@ MonoBehaviour:
   Min: 1
   Max: 5
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-964745555653912225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,6 +2196,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-352398533880922549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GameLevels
+  m_EditorClassIdentifier: 
+  Name: GameLevels
+  Min: 1
+  Max: 5
+  Default: 1
+  Exists: 0
 --- !u!114 &-240588059010708233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,6 +2230,23 @@ MonoBehaviour:
   lastModified: 637365419244880671
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &-234636677780263665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GameState
+  m_EditorClassIdentifier: 
+  Name: GameState
+  Min: 0
+  Max: 4
+  Default: 1
   Exists: 0
 --- !u!114 &-140516130886475484
 MonoBehaviour:
@@ -2254,13 +2388,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -5882330116016417075}
-  - {fileID: -1613241346111119598}
-  - {fileID: 7864404047786873305}
-  - {fileID: 4580718607322929128}
+  - {fileID: -2669197867767282812}
+  - {fileID: 8107705775980875000}
+  - {fileID: -8149252038079560633}
   EditorEvents:
   - {fileID: 4800507576350090518}
-  - {fileID: 8529658496863683540}
-  - {fileID: 5901340483166759595}
   - {fileID: -3287949455595775526}
   - {fileID: -7575692425258414559}
   - {fileID: -9062791290780480529}
@@ -2271,15 +2403,19 @@ MonoBehaviour:
   - {fileID: 3935307119415545638}
   - {fileID: 2745852179018786425}
   - {fileID: -6691785024045512254}
+  - {fileID: 6349638203089979391}
+  - {fileID: 2579688428287332695}
+  - {fileID: -8163130045282350276}
+  - {fileID: -5533001406662566319}
   EditorParameters:
-  - {fileID: 914304818466673337}
-  - {fileID: 2691625870263402181}
-  - {fileID: -995448351243446615}
+  - {fileID: 2216430881067512199}
+  - {fileID: -9037239012458933271}
+  - {fileID: 8753480988683855946}
   MasterBanks:
-  - {fileID: 7864404047786873305}
+  - {fileID: 8107705775980875000}
   StringsBanks:
   - {fileID: -5882330116016417075}
-  stringsBankWriteTime: 637365559767297798
+  stringsBankWriteTime: 637365596901104803
   cacheVersion: 3
 --- !u!114 &161628409906702228
 MonoBehaviour:
@@ -2444,7 +2580,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &964272388522013629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2784,24 @@ MonoBehaviour:
   Max: 5
   Default: 1
   Exists: 0
+--- !u!114 &1505961169105029687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637365593281332748
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &1762739257591553059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2817,6 +2971,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 79058
+--- !u!114 &2216430881067512199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GameState
+  m_EditorClassIdentifier: 
+  Name: GameState
+  Min: 0
+  Max: 4
+  Default: 1
+  Exists: 1
 --- !u!114 &2277181928825168482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,7 +3003,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_Miss_KillPeople
   guid: 2b4e59fc2ff80d4eb049e986bcedb4cd
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2910,6 +3081,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2579688428287332695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/AMB_Details
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/AMB_Details
+  guid: 4dd9b33eaf8fcc45aa067f3f96393761
+  Banks:
+  - {fileID: -2669197867767282812}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 131782
 --- !u!114 &2654054591453964481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2962,7 +3156,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2745852179018786425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2978,7 +3172,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_Start
   guid: c60c58fd5b9a9140abac21bc3828e9f9
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3112,7 +3306,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_Hit_A
   guid: 6892db81fa19e54ebaea1878a65bec90
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3252,6 +3446,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3693791520858570151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMB.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/AMB.bank
+  SubDir: 
+  lastModified: 637365593099215228
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3694959361233494215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3307,7 +3519,7 @@ MonoBehaviour:
   Path: event:/VOICES/Voices_Hit_C
   guid: 95e66734ef59774892e56a1979de96ff
   Banks:
-  - {fileID: 4580718607322929128}
+  - {fileID: -8149252038079560633}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3454,7 +3666,7 @@ MonoBehaviour:
   lastModified: 637365559768026385
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &4622870892681927112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,8 +3757,8 @@ MonoBehaviour:
   Path: event:/AMB/Strange_Sound
   guid: 14b8f0840f1e1b41b0cb115e6a0f9885
   Banks:
-  - {fileID: -1613241346111119598}
-  IsStream: 0
+  - {fileID: -2669197867767282812}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -3868,9 +4080,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/AMB/Arcade_Game
   guid: 5b40ffb3a76de241bddf23f76a06d631
-  Banks:
-  - {fileID: -1613241346111119598}
-  IsStream: 0
+  Banks: []
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -3999,6 +4210,29 @@ MonoBehaviour:
   Max: 5
   Default: 1
   Exists: 0
+--- !u!114 &6349638203089979391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: 
+  guid: 57e84383c45a1a47a40122ac319d9c0c
+  Banks:
+  - {fileID: 3693791520858570151}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &6425148605297500624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4097,6 +4331,24 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 1
+  Exists: 0
+--- !u!114 &6741198879992741345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Voices.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/Voices.bank
+  SubDir: 
+  lastModified: 637365593369456989
+  LoadResult: 0
+  FileSizes: []
   Exists: 0
 --- !u!114 &6788340182528869047
 MonoBehaviour:
@@ -4343,6 +4595,24 @@ MonoBehaviour:
   lastModified: 637365559767277854
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &8107705775980875000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Dupire_Workshop/dupire/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637365596901084853
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &8113582512903697039
 MonoBehaviour:
@@ -4427,8 +4697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/AMB/Toys
   guid: 213365420b8899488146f046a7894a52
-  Banks:
-  - {fileID: -1613241346111119598}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4454,6 +4723,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &8753480988683855946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GameLevels
+  m_EditorClassIdentifier: 
+  Name: GameLevels
+  Min: 1
+  Max: 5
+  Default: 1
+  Exists: 1
 --- !u!114 &8768323265077794383
 MonoBehaviour:
   m_ObjectHideFlags: 0
