@@ -61,6 +61,8 @@ public class Network : MonoBehaviour {
         instanceTargetA.start();
         FMODUnity.RuntimeManager.PlayOneShot("event:/Music_Play");
         FMODUnity.RuntimeManager.PlayOneShot("event:/AMB/AMB_Details");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/AMB/Parc_Sound");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/AMB/AMB_Scary");
         FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
     }
 
@@ -144,6 +146,7 @@ public class Network : MonoBehaviour {
                 case 1:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 1.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     instanceTargetA.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     nbShoot++;
                     stateChange();
@@ -155,6 +158,7 @@ public class Network : MonoBehaviour {
                 case 4:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -162,6 +166,7 @@ public class Network : MonoBehaviour {
 
                 case 6:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -184,7 +189,7 @@ public class Network : MonoBehaviour {
 
                 case 9:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -195,6 +200,7 @@ public class Network : MonoBehaviour {
                 case 10:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -213,6 +219,7 @@ public class Network : MonoBehaviour {
 
                 case 2:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -223,6 +230,7 @@ public class Network : MonoBehaviour {
                 case 4:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -230,6 +238,7 @@ public class Network : MonoBehaviour {
 
                 case 5:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -240,6 +249,7 @@ public class Network : MonoBehaviour {
                 case 8:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -256,6 +266,7 @@ public class Network : MonoBehaviour {
                 case 10:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -274,6 +285,7 @@ public class Network : MonoBehaviour {
 
                 case 3:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -284,6 +296,7 @@ public class Network : MonoBehaviour {
                 case 5:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -291,6 +304,7 @@ public class Network : MonoBehaviour {
 
                 case 6:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -301,6 +315,7 @@ public class Network : MonoBehaviour {
                 case 7:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -314,6 +329,7 @@ public class Network : MonoBehaviour {
 
                 case 9:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
@@ -324,6 +340,7 @@ public class Network : MonoBehaviour {
                 case 10:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/TargetTouched");
                     nbShoot++;
                     stateChange();
                     score++;
