@@ -11,6 +11,8 @@ using UnityEngine.Events;
 using System.Threading;
 using System.Collections.Generic;
 
+public class StrEvent : UnityEvent<string> { };
+
 public class Network : MonoBehaviour {
 
 	public int listenPort;
@@ -29,7 +31,7 @@ public class Network : MonoBehaviour {
     private FMOD.Studio.EventInstance instanceTargetB;
     private FMOD.Studio.EventInstance instanceTargetC;
 
-    public UnityEvent<string> onMessageReceive;
+    public StrEvent onMessageReceive;
 
 	string datA, datB, datC;
 

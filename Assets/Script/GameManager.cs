@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        network.onMessageReceive = new StrEvent();
         network.onMessageReceive.AddListener(ReceiveMessage);
         StartGame();
     }
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
+        StartCoroutine(StartingWaveRoutine());
         //StartNewPhase();
     }
      
@@ -109,11 +111,12 @@ public class GameManager : MonoBehaviour
             return true;
         }
 
+        ++currentPhase;
+
         //If the final wave is not reached, the game keeps going
         if (!StartNewWave()) {
             return false;
         }
-        ++currentPhase;
         return false;
     }
 
@@ -149,9 +152,9 @@ public class GameManager : MonoBehaviour
                     wave.targets[i].isAlive = true;
                     break;
             }
-
             UnityMainThread.wkr.Enqueue(Colorize(debugTargets[i], color));
         }
+        UnityMainThread.wkr.Enqueue(StartingWaveRoutine());
         return false;
     }
 
@@ -161,6 +164,7 @@ public class GameManager : MonoBehaviour
     {
         //TODO: Send start wave audio event
         yield return new WaitForSeconds(CurrentWave().duration);
+        Debug.Log("Wave started");
         CurrentWave().phaseState = ePHASE_STATE.Playing;
         //Send activation network messages for targets
         yield return null;
@@ -196,7 +200,7 @@ public class GameManager : MonoBehaviour
             }
         }
         else {
-            Debug.Log("Shot disabled or dead target " + target);
+            //Debug.Log("Shot disabled or dead target " + target);
         }
     }
 
