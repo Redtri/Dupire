@@ -147,6 +147,7 @@ public class Network : MonoBehaviour {
                     instanceTargetA.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 2
@@ -156,12 +157,14 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 case 6:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 3
@@ -169,10 +172,14 @@ public class Network : MonoBehaviour {
                 case 7:
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    if (score > 0)
+                        score--;
                     break;
 
                 case 8:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    if (score > 0)
+                        score--;
                     break;
 
                 case 9:
@@ -180,6 +187,7 @@ public class Network : MonoBehaviour {
 
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 4
@@ -189,6 +197,7 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
             }
@@ -206,6 +215,7 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 2
@@ -215,12 +225,14 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 case 5:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 3
@@ -230,10 +242,13 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 case 9:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    if (score > 0)
+                        score--;
                     break;
 
                 // State 4
@@ -243,6 +258,7 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
             }
@@ -260,6 +276,7 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 2
@@ -269,12 +286,14 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 case 6:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 3
@@ -284,16 +303,20 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 case 8:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
+                    if(score > 0)
+                        score--;
                     break;
 
                 case 9:
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
                 // State 4
@@ -303,6 +326,7 @@ public class Network : MonoBehaviour {
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                     nbShoot++;
                     stateChange();
+                    score++;
                     break;
 
             }
@@ -397,6 +421,7 @@ public class Network : MonoBehaviour {
                 state2 = true;
                 state3 = true;
                 gameState = 1;
+                score = 0;
                 StartGame();
                 break;
         }
