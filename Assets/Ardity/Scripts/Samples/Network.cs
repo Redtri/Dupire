@@ -47,11 +47,11 @@ public class Network : MonoBehaviour {
 
     void StartingAudio()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
         instanceTargetA = FMODUnity.RuntimeManager.CreateInstance("event:/Voices/Voices_Ostages");
         instanceTargetA.start();
         FMODUnity.RuntimeManager.PlayOneShot("event:/Music_Play");
         FMODUnity.RuntimeManager.PlayOneShot("event:/AMB/AMB_Details");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Start");
     }
 
 	void ListenThread() {
@@ -82,24 +82,18 @@ public class Network : MonoBehaviour {
             {
                 //Debug.Log("Target A Shot");
                 TargetAShot();
-                Debug.Log(gameState);
-                gameState++;
             }
 
             if (dat == "target_B")
             {
                 //Debug.Log("Target B Shot");
-                Debug.Log(gameState);
                 TargetBShot();
-                gameState++;
             }
 
             if (dat == "target_C")
             {
                 //Debug.Log("Target C Shot");
-                Debug.Log(gameState);
                 TargetCShot();
-                gameState++;
             }
         }
     }
@@ -107,7 +101,6 @@ public class Network : MonoBehaviour {
     void Update()
     {
         speakerOn();
-        stateChange();
         if (msgFromThread)
         {
             gameObject.SendMessage(msgName, msgPayload);
@@ -140,6 +133,7 @@ public class Network : MonoBehaviour {
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                 instanceTargetA.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 2
@@ -148,37 +142,40 @@ public class Network : MonoBehaviour {
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                 nbShoot++;
+                stateChange();
                 break;
 
             case 6:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 3
 
             case 7:
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                nbShoot++;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
                 break;
 
             case 8:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
-                nbShoot++;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
                 break;
 
             case 9:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
+                
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 4
 
             case 10:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_A");
                 nbShoot++;
+                stateChange();
                 break;
 
         }
@@ -193,19 +190,22 @@ public class Network : MonoBehaviour {
             case 2:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 2
 
             case 4:
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                 nbShoot++;
+                stateChange();
                 break;
 
             case 5:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 3
@@ -214,11 +214,11 @@ public class Network : MonoBehaviour {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                 nbShoot++;
+                stateChange();
                 break;
 
             case 9:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
-                nbShoot++;
                 break;
 
             // State 4
@@ -227,6 +227,7 @@ public class Network : MonoBehaviour {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_B");
                 nbShoot++;
+                stateChange();
                 break;
 
         }
@@ -241,6 +242,7 @@ public class Network : MonoBehaviour {
             case 3:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 2
@@ -249,11 +251,13 @@ public class Network : MonoBehaviour {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 2.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                 nbShoot++;
+                stateChange();
                 break;
 
             case 6:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 3
@@ -262,16 +266,17 @@ public class Network : MonoBehaviour {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 3.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                 nbShoot++;
+                stateChange();
                 break;
 
             case 8:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Miss_KillPeople");
-                nbShoot++;
                 break;
 
             case 9:
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                 nbShoot++;
+                stateChange();
                 break;
 
             // State 4
@@ -280,6 +285,7 @@ public class Network : MonoBehaviour {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", 4.0f);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Voices/Voices_Hit_C");
                 nbShoot++;
+                stateChange();
                 break;
 
         }
@@ -305,6 +311,14 @@ public class Network : MonoBehaviour {
     {
         switch (nbShoot)
         {
+            case 1:
+                gameState++;
+                break;
+
+            case 2:
+                gameState++;
+                break;
+
             case 3:
                 if (state1)
                 {
@@ -313,7 +327,17 @@ public class Network : MonoBehaviour {
                     Debug.Log("State 2 begins");
                     state1 = false;
                 }
+                gameState++;
                 break;
+
+            case 5:
+                gameState++;
+                break;
+
+            case 7:
+                gameState++;
+                break;
+
             case 9:
                 if (state2)
                 {
@@ -322,7 +346,17 @@ public class Network : MonoBehaviour {
                     Debug.Log("State 3 begins");
                     state2 = false;
                 }
+                gameState++;
                 break;
+
+            case 10:
+                gameState++;
+                break;
+
+            case 11:
+            gameState++;
+            break;
+
             case 13:
                 if (state3)
                 {
@@ -331,13 +365,17 @@ public class Network : MonoBehaviour {
                     Debug.Log("State 4 begins");
                     state3 = false;
                 }
+                gameState++;
                 break;
+
             case 16:
                 nbShoot = 0;
                 state1 = true;
                 state2 = true;
                 state3 = true;
+                gameState = 1;
                 break;
         }
+        Debug.Log("State is Changing :" + gameState);
     }
 }
