@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../FMOD/Dupire_Workshop/dupire/dupire.fspro
-  sourceBankPath: ..\..\..\FMOD\Dupire_Workshop\dupire\Build
+  sourceProjectPath: ../../FMOD/Dupire_Workshop/dupire/dupire.fspro
+  sourceBankPath: ..\..\FMOD\Dupire_Workshop\dupire\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -78,7 +78,10 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - AMB
+  - Voices
   BanksToLoad: []
   LiveUpdatePort: 9264
