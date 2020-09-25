@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listenPort: 2390
   timeToWait: 3
+  gameState: 1
   score: 0
 --- !u!4 &671971967
 Transform:
@@ -289,13 +290,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671971965}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8dc43e7d240d0e4790790f4960d5b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gamePhase: 1
   param: 0
+  targetPan: 0
 --- !u!1 &674662130
 GameObject:
   m_ObjectHideFlags: 0
