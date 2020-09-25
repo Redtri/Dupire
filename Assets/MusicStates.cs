@@ -6,6 +6,7 @@ public class MusicStates : MonoBehaviour
 {
     public float gamePhase = 1;
     public float param;
+    public float targetPan;
     void Start()
     {
         
@@ -16,5 +17,6 @@ public class MusicStates : MonoBehaviour
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GameLevels", gamePhase);
         FMODUnity.RuntimeManager.StudioSystem.getParameterByName("GameLevels", out param);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Target Pan", targetPan);
     }
 }
